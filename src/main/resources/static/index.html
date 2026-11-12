@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sistema de Chamados</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b7a75'/%3E%3Cpath d='M9 17l5 5 9-11' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Ir para o conteúdo</a>
+  <div class="app">
+    <aside class="lateral">
+      <a class="marca" href="#/dashboard">Chamados</a>
+      <nav aria-label="Principal">
+        <a href="#/dashboard" data-nav="dashboard">Dashboard</a>
+        <a href="#/chamados" data-nav="chamados">Chamados</a>
+        <a href="#/clientes" data-nav="clientes">Clientes</a>
+        <a href="#/categorias" data-nav="categorias">Categorias</a>
+        <a href="#/tecnicos" data-nav="tecnicos">Técnicos</a>
+      </nav>
+    </aside>
+    <main id="conteudo" tabindex="-1"></main>
+  </div>
+  <div id="avisos" aria-live="polite"></div>
+  <dialog id="confirmacao" aria-labelledby="confirmacao-titulo">
+    <form method="dialog">
+      <h2 id="confirmacao-titulo"></h2>
+      <p id="confirmacao-texto"></p>
+      <div class="acoes">
+        <button class="botao sec" value="nao">Cancelar</button>
+        <button class="botao" id="confirmacao-ok" value="sim"></button>
+      </div>
+    </form>
+  </dialog>
+  <noscript>Este sistema precisa de JavaScript para funcionar.</noscript>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
