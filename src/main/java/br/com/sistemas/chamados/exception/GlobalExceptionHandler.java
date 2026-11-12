@@ -3,6 +3,7 @@ package br.com.sistemas.chamados.exception;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -20,6 +21,11 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(RegraNegocioException.class)
     public ResponseEntity<ErroResposta> regraNegocio(RegraNegocioException ex) {
         return montar(HttpStatus.CONFLICT, ex.getMessage(), List.of());
+    }
+
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public ResponseEntity<ErroResposta> integridade(DataIntegrityViolationException ex) {
+        return montar(HttpStatus.CONFLICT, "Operação viola uma restrição de integridade dos dados", List.of());
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
